@@ -76,13 +76,14 @@ alte2(Y~X1+X2+X3+X4-1,k,d,aa,data=pcd)     # Model without the intercept is cons
  
  ## To obtain the variation of MSE of Type (2) Adjusted Liu Estimator.
 data(pcd)
-k<-c(0:10/10)
-d<-c(-10:10/10)
+k<-c(0:5/10)
+d<-c(5:25/10)
 aa<-c(0.958451,1.021155,0.857821,1.040296)
 msemat<-alte2(Y~X1+X2+X3+X4-1,k,d,aa,data=pcd)
 matplot(d,alte2(Y~X1+X2+X3+X4-1,k,d,aa,data=pcd),type="l",ylab=c("MSE"),
-main=c("Plot of MSE of Type (2) Adjusted Liu Estimator"),las=1)
-text(y=msemat[1,],x=d[1],labels=c(paste0("k=",k)))
+main=c("Plot of MSE of Type (2) Adjusted Liu Estimator"),
+cex.lab=0.6,adj=1,cex.axis=0.6,cex.main=1,las=1,lty=3)
+text(y=msemat[1,],x=d[1],labels=c(paste0("k=",k)),pos=4,cex=0.6)
  ## Use "press=TRUE" to obtain the variation of PRESS of Type (2) Adjusted Liu Estimator. 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

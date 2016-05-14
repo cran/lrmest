@@ -2,7 +2,7 @@
 \alias{alte3}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Type (1) Adjusted Liu Estimator
+Type (3) Adjusted Liu Estimator
 }
 \description{
 This function can be used to find the Type (3) Adjusted Liu Estimatd values, corresponding scalar Mean Square Error (MSE) value and Prediction Sum of Square (PRESS) value in the linear model. Further the variation of MSE and PRESS values can be shown graphically. 
@@ -76,13 +76,14 @@ alte3(Y~X1+X2+X3+X4-1,k,d,aa,data=pcd)      # Model without the intercept is con
       
  ## To obtain the variation of MSE of Type (3) Adjusted Liu Estimator.
 data(pcd)
-k<-c(0:10/10)
-d<-c(-10:10/10)
+k<-c(50:51/5)
+d<-c(300:305/10)
 aa<-c(0.958451,1.021155,0.857821,1.040296)
 msemat<-alte3(Y~X1+X2+X3+X4-1,k,d,aa,data=pcd)
 matplot(d,alte3(Y~X1+X2+X3+X4-1,k,d,aa,data=pcd),type="l",ylab=c("MSE"),
-main=c("Plot of MSE of Type (3) Adjusted Liu Estimator"),las=1)
-text(y=msemat[1,],x=d[1],labels=c(paste0("k=",k)))
+main=c("Plot of MSE of Type (3) Adjusted Liu Estimator"),
+cex.lab=0.6,adj=1,cex.axis=0.6,cex.main=1,las=1,lty=3)
+text(y=msemat[1,],x=d[1],labels=c(paste0("k=",k)),pos=4,cex=0.6)
  ## Use "press=TRUE" to obtain the variation of PRESS of Type (3) Adjusted Liu Estimator. 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

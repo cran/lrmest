@@ -76,17 +76,29 @@ P.Wijekoon, A.Dissanayake
 Conversion of estimators and corresponding \code{k} and/or \code{d} values are given below.\cr
 
 \code{SRRE     =     MIXE     k=0}\cr
+\code{OGSRRE     =     MIXE     k=0}\cr
 \code{RE       =     OLS      k=0}\cr
+\code{OGRE       =     OLS      k=0}\cr
 \code{RLE      =     RLS      d=1}\cr
+\code{OGRLE      =     RLS      d=1}\cr
 \code{LE       =     OLS      d=1}\cr
-\code{RRRE     =     RLS      k=0}\cr  
-\code{SRLE     =     MIXE     d=1}\cr            
+\code{OGLE     =     OLS     d=1}\cr
+\code{RRRE     =     RLS      k=0}\cr
+\code{OGRRRE     =     RLS      k=0}\cr  
+\code{SRLE     =     MIXE     d=1}\cr   
+\code{OGSRLE     =     MIXE     d=1}\cr  
 \code{AURE     =     OLS      k=0}\cr
+\code{OGAURE     =     OLS      k=0}\cr
 \code{AULE     =     OLS      d=1}\cr
+\code{OGAULE     =     OLS      d=1}\cr
 \code{LTE1     =     RE       d=0}\cr
+\code{OGLTE1     =     RE       d=0}\cr
 \code{LTE1     =     OLS      k=0 and d=0}\cr
+\code{OGLTE1     =     OLS      k=0 and d=0}\cr
 \code{LTE2     =     RE       d=0}\cr
-\code{LTE2     =     OLS      k=0 and d=0}\cr 
+\code{OGLTE2     =     RE       d=0}\cr
+\code{LTE2     =     OLS      k=0 and d=0}\cr
+\code{OGLTE2     =     OLS      k=0 and d=0}\cr
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -97,8 +109,9 @@ Conversion of estimators and corresponding \code{k} and/or \code{d} values are g
 \examples{
 ## portland cement data set is used.
 data(pcd)
-k<-c(0:4/10)
-d<-c(-4:4/10)
+attach(pcd)
+k<-c(0:3/10)
+d<-c(-3:3/10)
 r<-c(2.1930,1.1533,0.75850)
 R<-c(1,0,0,0,0,1,0,0,0,0,1,0)
 dpn<-c(0.0439,0.0029,0.0325)
